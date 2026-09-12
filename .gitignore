@@ -1,0 +1,20 @@
+# 系统自动生成的杂项文件，不用进仓库
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# 本机编辑器 / 工具的本地配置，不该进公开仓库
+.claude/
+.vscode/
+.idea/
+
+# 原始大图不进仓库：网页只用 photos/web/ 和 photos/thumb/，
+# 把 48MB 原图传上去只会让仓库变重、clone 变慢。原图留在你本地就好。
+# （下面这几条只匹配 photos/ 根目录下的图片，不影响 web/ 和 thumb/ 子文件夹）
+/photos/*.jpg
+/photos/*.jpeg
+/photos/*.png
+/photos/*.JPG
+/photos/*.JPEG
+/photos/*.PNG

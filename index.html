@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>本科回忆录</title>
+<meta name="description" content="我的本科四年，一段缓慢流动的时光。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 胶片齿孔：顶部 / 底部 -->
+<div class="sprocket sprocket--top" aria-hidden="true"></div>
+<div class="sprocket sprocket--bottom" aria-hidden="true"></div>
+
+<!-- 页头 -->
+<header class="masthead">
+  <h1 class="masthead__title">本科回忆录</h1>
+  <p class="masthead__sub">四年 · 一段缓慢流动的时光</p>
+</header>
+
+<!-- 照片墙 -->
+<main id="wall" class="wall" aria-label="照片墙">
+  <div id="loading" class="state state--loading">正在冲洗照片……</div>
+  <div id="error" class="state state--error" hidden></div>
+</main>
+
+<!-- 底部提示 -->
+<p class="hint" id="hint">把鼠标停在照片上，它会停下来 · 点击读一段回忆</p>
+
+<!-- 详情覆盖层 -->
+<div class="overlay" id="overlay" hidden tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="ov-title">
+  <button class="overlay__close" id="ov-close" type="button" aria-label="关闭">&times;</button>
+
+  <button class="overlay__nav overlay__nav--prev" id="ov-prev" type="button" aria-label="上一张">&#8249;</button>
+  <button class="overlay__nav overlay__nav--next" id="ov-next" type="button" aria-label="下一张">&#8250;</button>
+
+  <div class="overlay__panel" id="ov-panel">
+    <figure class="overlay__figure">
+      <img class="overlay__img" id="ov-img" alt="">
+      <figcaption class="overlay__count" id="ov-count"></figcaption>
+    </figure>
+
+    <div class="overlay__body">
+      <p class="overlay__date" id="ov-date"></p>
+      <h2 class="overlay__title" id="ov-title"></h2>
+      <div class="overlay__text" id="ov-text"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 胶片颗粒 -->
+<div class="grain" aria-hidden="true"></div>
+
+<noscript>
+  <p class="state state--error">这个页面需要 JavaScript 才能显示照片墙，请在浏览器设置里开启。</p>
+</noscript>
+
+<script src="script.js"></script>
+</body>
+</html>
